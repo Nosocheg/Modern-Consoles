@@ -1,0 +1,510 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+html {
+  box-sizing: border-box; /*за счет элемента*/
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; /*такие же как у их родителей*/
+}
+
+a {
+  color: inherit;
+  text-decoration: none; /*lkz ccskjr*/
+}
+
+img {
+  max-width: 100%; /*чтобы изображения не выходили за рамки контейнера*/
+  object-fit: cover;
+}
+
+body {
+  /*min-width: 1200px; /* чтобы как бы не сжимали, все оставалось на своих местах / но убираем для адаптивной верстки*/
+  font-family: "Montserrat", sans-serif; /*задаем шрифт*/
+  font-weight: 400;
+  background-color: #1b1919; /*устанавливаем цвет страницы*/
+  color: #fff; /*устанавливаем цвет текста*/
+  max-height: 100vh;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;               /* ширина scrollbar */
+}
+  body::-webkit-scrollbar-thumb {
+  background: linear-gradient(rgb(115, 80, 255), hsl(228, 87%, 30%));   
+  border-radius: 15px;       /* закругление скроллбара */
+  border: 1px solid hsl(232, 91%, 50%);  /* отступы вокруг скроллбара */
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(rgb(115, 80, 255), rgb(252, 112, 6)); 
+}
+
+/*glob */
+.list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none; /*чтобы списки не выделались визуально*/
+}
+
+.btn-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer; /*можно кликнуть*/
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 30px;
+  margin: 0 auto; /*центрировался по горизонтали*/
+}
+
+.section-title {
+    margin: 0; /*сбрасываем стили h1, h2 ...*/;
+    margin-bottom: 2em; /*отступ снизу*/
+}
+
+.section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.section-descr {
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+.section-offset {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+header {
+    padding: 20px 0;
+    border-bottom: 1px solid hsl(232, 91%, 50%);
+}
+
+.header-container {
+    align-items: center;
+}
+
+.header-logo {
+    margin-right: auto; /*прижимаем логотип слево, все остальное будет прижато справа*/
+    width:50px;
+    overflow: hidden; /* Скрываем всё за контуром */
+}
+
+.header-nav {
+    margin-right: 50px;
+}
+
+span {
+    text-transform: uppercase; /*переводим все буквы в верхний регистр*/
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header-list-item:not(:last-child) {
+    margin-right: 50px; /*так как за последний эл. отвечает header-nav*/
+}
+
+.header-link {
+    font-weight: 400;
+    /*color: hsl(232, 91%, 50%);*/
+    font-size: 15px;
+}
+
+.header-link:hover {
+    font-weight: 400;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 15px 15px;
+    background: linear-gradient(120deg, #db1daf 0%,#2205b1 100%);
+    color: white;
+    border-radius: 5px;
+}
+
+/* hero */
+.hero-list {
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  justify-items: center;
+ }
+
+.hero-item {
+  flex-direction: column;
+  padding: 15px;
+  max-width: 38em;
+  /*outline: 1px solid coral;*/
+}
+
+.blog-hero-text {
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  padding: 15px;
+  max-width: 38em;
+  text-align: justify;
+  
+}
+
+.hero-tittle {
+  font-size: 5vh;
+  color: transparent;    
+	-webkit-background-clip: text;
+	background-clip: text;
+  background-image: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+}
+
+.blog-hero-image {
+  width: 80%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  /*outline: 1px solid rgb(26, 4, 116);*/
+  overflow: hidden; /* Скрываем всё за контуром */
+}
+
+.block-hero-tittle {
+  font-size: 4vh;
+  text-align: center;
+  color: transparent;    
+	-webkit-background-clip: text;
+	background-clip: text;
+  background-image: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgb(196, 30, 146) 50%, rgba(252, 176, 69, 1) 100%);
+}
+
+.block-hero-descr {
+  font-size: 3vh;
+  text-align: justify;
+  padding: 15px;
+}
+
+.hero-btn {
+  margin: 0;
+  padding: 12px 17px;
+  background: linear-gradient(120deg, #db1daf 0%,#2205b1 100%);
+  color: white;
+  border-radius: 5px;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+}
+
+.swiper {
+  width: 80vh;
+  height: 40vh;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+/* services */
+.services-list {
+ flex-wrap: wrap;
+ justify-content: space-between;
+ text-align: center;
+}
+
+.services-tittle {
+  font-size: 2.5em;
+  color: coral;
+}
+
+.services-descr {
+  text-align: justify;
+}
+
+.services-item {
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  width: 310px;
+  outline: 1px solid coral;
+  border-radius: 15px;
+}
+.services-item:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+
+.services-item-tittle {
+  margin: 0;
+  margin-top: 30px;
+  color: transparent;    
+	-webkit-background-clip: text;
+	background-clip: text;
+  background-image: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgb(53, 207, 45) 50%, rgba(252, 176, 69, 1) 100%);
+}
+.arrow-button {
+  font-size: 1.2em;
+  color: rgb(35, 155, 241);
+  /*color: transparent;    
+	-webkit-background-clip: text;
+	background-clip: text;
+  background-image: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgb(45, 85, 207) 50%, rgb(14, 243, 235) 100%);*/
+}
+
+.section-descr {
+  margin: 0;
+  text-align: center;
+}
+
+/* consoles */
+.consoles-list {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.consoles-tittle {
+  font-size: 2.5em;
+  color: transparent;    
+	-webkit-background-clip: text;
+	background-clip: text;
+  background-image: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+}
+
+.consoles-item {
+  width: 310px;
+  height: 200px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  /*outline: 1px solid rgb(26, 4, 116);*/
+  overflow: hidden; /* Скрываем всё за контуром */
+}
+
+.consoles-item:not(:nth-child(3n)) {
+  margin-right: 15px;
+}
+
+.blog-consoles {
+  object-fit: cover;
+}
+
+/* clients */
+.clients-list {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: justify;
+}
+
+.clients-tittle-section {
+  font-size: 2.5em;
+  color: transparent;    
+	-webkit-background-clip: text;
+	background-clip: text;
+  background-image: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+}
+
+.clients-item {
+  flex-direction: column;
+  width: 310px;
+  padding: 15px 15px;
+  padding-bottom: 10px;
+  outline: 1px solid coral;
+  justify-content: center;
+  text-align: justify;
+  background: linear-gradient(120deg, #db1daf 0%,#2205b1 100%);
+  border-radius: 15px;
+}
+
+.clients-item:not(:nth-child(3n)) {
+  margin-right: 15px;
+}
+
+.clients-item-descr {
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.clients-avatar {
+  flex-shrink: 0;
+  width: 67px;
+  margin-right: 17px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.clients-item {
+  flex-wrap: wrap;
+  text-align: justify;
+}
+
+.clients-name {
+  margin-bottom: 5px;
+}
+
+/* contacts */
+.contacts-list {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: justify;
+}
+ 
+
+.contacts-address {
+  font-style: none;
+  margin-bottom: 6.25em;
+}
+
+.contains-tittle {
+  font-size: 2.5em;
+  color: transparent;    
+	-webkit-background-clip: text;
+	background-clip: text;
+  background-image: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+}
+
+.contacts-item {
+  flex-direction: column;
+  width: 310px;
+  padding: 15px;
+  background-color: #2D333C;
+  border-radius: 15px;
+  transition: 0.5s;
+}
+
+.contacts-item:hover {
+  border: 1.2px solid hsl(232, 91%, 50%);
+  background: cornflowerblue;
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+.contacts-item:not(:nth-child(3n)) {
+  margin-right: 15px;
+}
+
+.contacts-item-caption {
+  margin-bottom: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em; /*равна текущему размеру шрифта, например, если font-size документа равен 12pt, то то 1em равен 12pt*/
+  color: #fc05f4;
+}
+
+.contacts-item-text {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+}
+
+.contacts-foto {
+  display: flex;
+  width:100px;
+  transition: 0.5s; /* Время эффекта */
+}
+.contacts-foto:hover {
+  transform: rotate(360deg); /* Поворот */
+}
+
+button:active {
+  color: rgb(255, 255, 255, .7);
+}
+
+/* footer */
+footer {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+footer .copyright{
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  /* or 125% */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1px;
+
+  color: #FFFFFF;
+  margin: 25px;
+}
+
+
+@media (max-width: 1366px) {
+  .tittle-section-tittle {
+    max-width: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .for-mobily {
+    display: block;;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .header-nav a:not(:first-child) {display: none;}
+  .header-nav a.icon {
+    float: right;
+    display: block;
+  }
+}.topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+}
+
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    max-width: none;
+  }
+  .img {
+    max-width: none;
+  }
+  .header-nav {
+    display: none;
+  }
+  .hero-list {
+    flex-direction: column;
+  }
+
+  /*.swiper {
+    width: 310px;
+  }*/
+  .blog-hero-text {
+    flex-direction: column;
+  }
+  .block-hero-descr {
+    width: 310px;
+  }
+  .footer {
+    text-align: left; 
+  }
+  .hero-tittle {
+    text-align: left; 
+  }
+ 
+  .burger {
+    --burger-width: 30px;
+    --burger-heidth: 23px;
+    --burger-line-heigth: 2px;
+    width: var(--burger-width);
+    height: var(--burger-heidth);
+    position: relative;
+    color: #fff;
+    display: none;
+  }
+  }
+
+ 
+ 
